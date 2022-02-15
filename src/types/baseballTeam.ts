@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 export class BaseballTeam {
   constructor(
     // id
@@ -11,6 +12,10 @@ export class BaseballTeam {
     // 歴史
     private _history: string
   ) {}
+
+  get formatDate(): string {
+    return format(this.inauguration, "yyyy年MM月dd日");
+  }
 
   public get id(): number {
     return this._id;

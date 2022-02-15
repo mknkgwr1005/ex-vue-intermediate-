@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { BaseballTeam } from "@/types/baseballTeam";
+import { format } from "date-fns";
 
 Vue.use(Vuex);
 
@@ -153,9 +154,19 @@ export default new Vuex.Store({
   modules: {},
   getters: {
     getBaseballTeam(state): Array<BaseballTeam> {
-      console.dir(JSON.stringify(state.baseballTeams));
-
       return state.baseballTeams;
+    },
+    getBaseballTeamById(state) {
+      return (id: number) => {
+        const newBaseballTeams = state.baseballTeams.filter(
+          (baseballTeams) => baseballTeams.id === id
+        );
+        return newBaseballTeams[0];
+      };
+    },
+    getBaseballTeambyDate(state) {
+      const newBaseballTeamsDate = state.baseballTeams[0].inauguration;
+      return format(newBaseballTeamsDate, "yyyy年mm月dd日");
     },
   },
 });
