@@ -1,11 +1,18 @@
 export class Hotel {
   constructor(
+    //   ID
     private _id: number,
+    // ホテルの地域
     private _place: string,
+    // ホテル名
     private _name: string,
+    // ホテル住所
     private _address: string,
+    // ホテルの最寄り駅
     private _station: string,
+    // ホテルの価格
     private _price: number,
+    // フラグ
     private _flag: boolean
   ) {}
 
