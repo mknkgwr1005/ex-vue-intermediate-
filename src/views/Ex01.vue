@@ -1,9 +1,15 @@
 <template>
   <div>
+    <div id="subtitle">野球チーム一覧</div>
+    <br />
+    <br />
+
     <div v-for="baseballTeam of baseballTeams" v-bind:key="baseballTeam.id">
       <div>
         <router-link :to="/baseballTeamDetail/ + baseballTeam.id">
           {{ baseballTeam.teamName }}
+          <br />
+          <br />
         </router-link>
       </div>
     </div>
@@ -25,4 +31,8 @@ export default class baseballTeamParent extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#subtitle {
+  font-weight: bold;
+}
+</style>
