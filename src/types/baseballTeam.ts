@@ -1,4 +1,4 @@
-export class baseballTeam {
+export class BaseballTeam {
   constructor(
     // id
     private _id: number,
@@ -20,28 +20,12 @@ export class baseballTeam {
     this._id = id;
   }
 
-  public get 球団名(): undefined {
-    return this.球団名;
-  }
-
-  public set 球団名(球団名: undefined) {
-    this.球団名 = 球団名;
-  }
-
   public get teamName(): string {
     return this._teamName;
   }
 
   public set teamName(teamName: string) {
     this._teamName = teamName;
-  }
-
-  public get 本拠地(): undefined {
-    return this.本拠地;
-  }
-
-  public set 本拠地(本拠地: undefined) {
-    this.本拠地 = 本拠地;
   }
 
   public get headquarters(): string {
@@ -52,28 +36,12 @@ export class baseballTeam {
     this._headquarters = headquarters;
   }
 
-  public get 発足日(): undefined {
-    return this.発足日;
-  }
-
-  public set 発足日(発足日: undefined) {
-    this.発足日 = 発足日;
-  }
-
   public get inauguration(): Date {
     return this._inauguration;
   }
 
   public set inauguration(inauguration: Date) {
     this._inauguration = inauguration;
-  }
-
-  public get 歴史(): undefined {
-    return this.歴史;
-  }
-
-  public set 歴史(歴史: undefined) {
-    this.歴史 = 歴史;
   }
 
   public get history(): string {
