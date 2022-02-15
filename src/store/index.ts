@@ -184,14 +184,14 @@ export default new Vuex.Store({
     getBaseballTeambyDate(state) {
       const newBaseballTeamsDate = state.baseballTeams[0].inauguration;
       return format(newBaseballTeamsDate, "yyyy年mm月dd日");
-
     },
     // ホテル一覧を値段で表示する
-    getHotelsByPrice(state){
-      return (price:number){
-        
-      }
-      const newHotel=state.hotels[0]
+    getHotelsByPrice(state) {
+      return (price: number) => {
+        const newHotel = state.hotels.filter((hotels) => hotels.price <= price);
+        // 複数件表示させたいときは、配列番号はかかない
+        return newHotel;
+      };
     },
   },
 });
