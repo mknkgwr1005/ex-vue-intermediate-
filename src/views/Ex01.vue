@@ -20,7 +20,7 @@
 import { BaseballTeam } from "@/types/baseballTeam";
 import { Component, Vue } from "vue-property-decorator";
 @Component
-export default class baseballTeamParent extends Vue {
+export default class Ex01 extends Vue {
   /**
    * 野球チーム一覧を表示する.
    * @returns   ‐野球チーム一覧
