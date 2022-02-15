@@ -15,6 +15,10 @@ import { BaseballTeam } from "@/types/baseballTeam";
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class baseballTeamParent extends Vue {
+  /**
+   * 野球チーム一覧を表示する.
+   * @returns   ‐野球チーム一覧
+   */
   get baseballTeams(): Array<BaseballTeam> {
     return this.$store.getters.getBaseballTeam;
   }

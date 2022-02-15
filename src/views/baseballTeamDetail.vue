@@ -34,8 +34,14 @@ import { BaseballTeam } from "@/types/baseballTeam";
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class BaseballTeamDetail extends Vue {
+  // 野球チーム一覧ページ
   private homeUrl = "/Ex01/";
+  //   現在の野球チーム
   private currentbaseballTeam = new BaseballTeam(0, "", "", new Date(), "");
+  /**
+   * ページ遷移と同時に、リクエストパラメータから送られてきたIDから野球チームを検索して
+   * 表示する.
+   */
   created(): void {
     const baseballTeamid = Number(this.$route.params.id);
     this.currentbaseballTeam =

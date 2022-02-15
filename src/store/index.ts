@@ -8,6 +8,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
+    // 野球チーム一覧
     baseballTeams: [
       new BaseballTeam(
         10,
@@ -153,9 +154,19 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
   getters: {
+    /**
+     * 野球チーム一覧を表示する.
+     * @param state - state
+     * @returns - 野球チーム一覧
+     */
     getBaseballTeam(state): Array<BaseballTeam> {
       return state.baseballTeams;
     },
+    /**
+     * IDから野球チームを検索する.
+     * @param state -state
+     * @returns -引数として渡されたIDで野球チームを検索する\
+     */
     getBaseballTeamById(state) {
       return (id: number) => {
         const newBaseballTeams = state.baseballTeams.filter(
@@ -164,6 +175,11 @@ export default new Vuex.Store({
         return newBaseballTeams[0];
       };
     },
+    /**
+     * 野球チームの発足日をyyyy年㎜月dd日へフォーマットする.
+     * @param state -state
+     * @returns -date関数のformatした値
+     */
     getBaseballTeambyDate(state) {
       const newBaseballTeamsDate = state.baseballTeams[0].inauguration;
       return format(newBaseballTeamsDate, "yyyy年mm月dd日");
