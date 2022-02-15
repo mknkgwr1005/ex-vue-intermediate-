@@ -46,8 +46,6 @@ export default class BaseballTeamDetail extends Vue {
     const baseballTeamid = Number(this.$route.params.id);
     this.currentbaseballTeam =
       this.$store.getters.getBaseballTeamById(baseballTeamid);
-    //   日付のformatをするgetterの呼び出し
-    this.currentbaseballTeam.formatDate;
   }
 }
 </script>

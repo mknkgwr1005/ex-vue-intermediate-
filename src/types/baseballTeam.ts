@@ -1,4 +1,7 @@
 import { format } from "date-fns";
+/**
+ * 野球チーム一覧を表示するクラスです.
+ */
 export class BaseballTeam {
   constructor(
     // id
@@ -13,6 +16,9 @@ export class BaseballTeam {
     private _history: string
   ) {}
 
+  /**
+   * 野球チームの発足日をformatするgetterです.
+   */
   get formatDate(): string {
     return format(this.inauguration, "yyyy年MM月dd日");
   }
